@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <!-- This solution is based on http://stackoverflow.com/a/30386836/123147 and http://stackoverflow.com/a/30316946/123147 -->
+  <metadata>
+    <id>NeededFiles</id>
+    <version>1.0.0</version>
+	<authors>@Rob_Hale_VT</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+	  An example of delivering files to the consuming project's output via build targets
+	</description>
+    <releaseNotes>Created</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Demo</tags>
+  </metadata>
+  <files>
+	<!-- In this instance, the file(s) to be delivered are in the sub-folder named "howdy" -->
+	<file src="howdy\*.*" target="build\howdy" />
+	
+	<!-- The targets file must have the same name as this package -->
+	<!-- More info: https://docs.nuget.org/ndocs/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package -->
+	<file src="NeededFiles.targets" target="build" />
+  </files>
+</package>

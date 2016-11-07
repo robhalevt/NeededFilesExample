@@ -1,0 +1,10 @@
+<!-- This solution is based on http://stackoverflow.com/a/30386836/123147 and http://stackoverflow.com/a/30316946/123147 -->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <NativeLibs Include="$(MSBuildThisFileDirectory)howdy\*.*" />
+    <None Include="@(NativeLibs)">
+      <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
